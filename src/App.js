@@ -1,16 +1,16 @@
 import React from "react";
 import {BrowserRouter,Routes,Route} from 'react-router-dom'
 
-import LoginPage from './components/LoginForm/LoginPage'
 import Profile from './components/Profile/profilePage'
-import TranslationPage from "./components/Translation/translationPage";
+import Login from "./views/Login";
+import Translate from "./views/Translate";
 function App() {
   return (
     <BrowserRouter>
     <div className="App">
       <Routes>
-        <Route path="/" element={<LoginPage/>}/>
-        <Route path="translate" element={<TranslationPage/>}/>
+        <Route path="/" element={<Login/>}/>
+        <Route path="translate" element={<Translate/>}/>
         <Route path="profile" element={<Profile/>}/>
       </Routes>
     </div>
@@ -20,3 +20,4 @@ function App() {
 }
 
 export default App;
+
