@@ -4,19 +4,16 @@
  * logout button should clear all the storage(redirect to Login page)
  */
  import React,{useState,useEffect} from 'react';
+ 
 
-//  import './translation.css'
+ import './Translation.css'
  
  
      const TranslationPage =props=> {
          const [value, setValue]=useState('')
          const [disabled, setDisabled]=useState([])
+         const [imageSequence, setImageSequence] = useState([])
  
-         let tempArray = [];
-         let images =[
-             {src:'handSign'}
-         ]
-     
  
          const handleChange =e=>{
              setDisabled(false)
@@ -27,16 +24,18 @@
          const handleSubmit =e=>{
              e.preventDefault();
              setDisabled(true)
+
              if(value<1){
                  alert('please enter a word')
                  return;
              }
- 
+             const tempArray=[];
              for(let index = 0; index <value.length;index++){
                  tempArray.push(value[index])
-                 // tempArray.push(`${images.src}`);
          }
-             console.log('value stored : ',tempArray)
+            setImageSequence(tempArray)
+             console.log('value stored in tempArray : ',tempArray)
+             console.log('value stored setImageSequence : ',imageSequence)
          }
  
  
@@ -53,20 +52,20 @@
                      <button type="submit" disabled={disabled} className={disabled?"disabled":""}>click</button>
                  </form>
              </div>
-              {images.map((image,index)=>{
+             <div className="translate-container">
+              {imageSequence.map((image,index)=>{
                  return(
                      <div key={index}>
                          <ul>
-                             <img src={`${image.src}/${value}.png`}
+                             <img src={`handSign/${image}.png`}
+
                                      alt=""
                                      key={index}/>
                          </ul>
-                         <div>
-                              //display here imageArrays
-                         </div>
                  </div>
                  )
               })}
+              </div>
          </div>
      );
  }
