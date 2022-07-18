@@ -4,6 +4,7 @@
  * logout button should clear all the storage(redirect to Login page)
  */
  import React,{useState,} from 'react';
+ import { apiPostRequest } from '../../api/user';
 import withAuth from '../../hoc/withAuth';
  
 
