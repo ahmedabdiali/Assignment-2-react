@@ -4,6 +4,8 @@
  * logout button should clear all the storage(redirect to Login page)
  */
  import React,{useState,useEffect} from 'react';
+ import {createUser } from '../../api/user'
+ import {apiPostRequest } from '../../api/user'
  
 
  import './Translation.css'
@@ -33,7 +35,11 @@
              for(let index = 0; index <value.length;index++){
                  tempArray.push(value[index])
          }
-            setImageSequence(tempArray)
+            setImageSequence(tempArray)// renders images
+            
+            apiPostRequest(value,tempArray)
+    
+
              console.log('value stored in tempArray : ',tempArray)
              console.log('value stored setImageSequence : ',imageSequence)
          }

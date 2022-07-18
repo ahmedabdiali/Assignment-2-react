@@ -15,14 +15,15 @@ const checkForUser = async ( username ) => {
         return [ error.message, []]
     }
 }
-const createUser = async (username) => {
+export const createUser = async (username) => {
     try {
         const response = await fetch(apiUrl, {
             method: 'POST',
             headers: createHeaders(),
             body: JSON.stringify({
                 username,
-                translations: []
+                translations:[]
+
             })
         })
         if (!response.ok){
@@ -35,6 +36,23 @@ const createUser = async (username) => {
         return [ error.message, [] ]
     }
 }
+
+export const apiPostRequest = async (name) => {
+   
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: createHeaders(),
+            body: JSON.stringify({
+                translations:{name}
+            })
+        })
+    }
+   
+
+
+
+
+
 
 export const loginUser = async username => {
     const [ error, user] = await checkForUser(username)
