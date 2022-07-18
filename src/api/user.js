@@ -2,6 +2,7 @@ import { createHeaders } from "."
 
 const apiUrl = process.env.REACT_APP_API_URL
 
+//function to check if the user exists in the database
 const checkForUser = async ( username ) => {
     try {
         const response = await fetch(`${apiUrl}?username=${username}`)
@@ -15,6 +16,8 @@ const checkForUser = async ( username ) => {
         return [ error.message, []]
     }
 }
+
+//POST request to create user
 const createUser = async (username) => {
     try {
         const response = await fetch(apiUrl, {
@@ -36,6 +39,7 @@ const createUser = async (username) => {
     }
 }
 
+//function to login the user to the application
 export const loginUser = async username => {
     const [ error, user] = await checkForUser(username)
     
