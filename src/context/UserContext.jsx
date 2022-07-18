@@ -1,4 +1,5 @@
 import { createContext, useContext, useState } from "react";
+import { storageRead } from "../utils/storage";
 
 const UserContext = createContext()
 
@@ -8,7 +9,7 @@ export const useUser = () => {
 
 const UserProvider = ({ children }) => {
     
-    const [ user, setUser ] = useState(null)
+    const [ user, setUser ] = useState( storageRead('user'))
 
 const state = {
     user,

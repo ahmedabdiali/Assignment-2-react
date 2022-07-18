@@ -1,6 +1,7 @@
 import { Navigate } from "react-router-dom"
 import { useUser } from "../context/UserContext"
 
+//Authenticates if the user exists or not. If the user doesn't exist, the user is sent to the login page.
 const withAuth = Component => props => {
     const { user } = useUser()
     if (user !== null){

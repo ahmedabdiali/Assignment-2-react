@@ -1,0 +1,16 @@
+h1 {
+    text-align: center;
+}
+button {
+    border-radius: 20px;
+    background-color: seagreen;
+    color: beige;
+    margin: 10px;
+    
+}
+#TranslationHistoryDiv {
+    background-color: khaki;
+    border-radius: 10px;
+    width: 250px;
+    text-align: center;
+}

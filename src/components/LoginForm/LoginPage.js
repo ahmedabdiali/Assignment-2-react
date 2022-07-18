@@ -6,10 +6,10 @@ import {useNavigate} from 'react-router-dom'
 import { useUser } from '../../context/UserContext';
 
 const nameRequirement = {
+    required: true,
     minLength: 3
 };
 
-//Hooks
 const LoginForm=()=> {
     const { 
         register,
@@ -44,6 +44,9 @@ const errorMessage = (() =>{
     }
     if (errors.username.type === 'minLength'){
         return <span>Name must be at least 3 letters</span>
+    }
+    if (errors.username.type === 'required'){
+        return <span>Please enter a name</span>
     }
 })()
 

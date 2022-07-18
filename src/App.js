@@ -4,7 +4,7 @@ import Login from "./views/Login";
 import Translate from "./components/Translation/translationPage";
 import Profile from "./views/Profile";
 import Navbar from "./components/Navbar/Navbar"
-// import Translate from "./views/Translate";
+
 function App() {
   return (
     <BrowserRouter>
