@@ -3,7 +3,7 @@ import { storageDelete } from "../../utils/storage"
 
 const ProfileActions = ({ logout }) => {
     
-    const {user, setUser} = useUser()
+    const { setUser} = useUser()
 
     const handleLogoutClick = () => {
         logout()
@@ -13,10 +13,6 @@ const ProfileActions = ({ logout }) => {
     const handleDeleteTranslations = () => {
         if (window.confirm('Are you sure you want to delete your translations?')){
         storageDelete('translations', [])
-        setUser({
-            ...user,
-            translations: []
-        })
     }}
 
     return (
