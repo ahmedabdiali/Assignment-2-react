@@ -5,11 +5,14 @@ import { storageSave } from '../../utils/storage';
 import {useNavigate} from 'react-router-dom'
 import { useUser } from '../../context/UserContext';
 
+//Requirements on the name that the user inputs
 const nameRequirement = {
     required: true,
     minLength: 3
 };
 
+
+//Function for the user to login to the app
 const LoginForm=()=> {
     const { 
         register,

@@ -3,9 +3,8 @@
  * button to clear the translation(delete from the API)
  * logout button should clear all the storage(redirect to Login page)
  */
- import React,{useState,useEffect} from 'react';
- import {createUser } from '../../api/user'
- import {apiPostRequest } from '../../api/user'
+ import React,{useState,} from 'react';
+import withAuth from '../../hoc/withAuth';
  
 
  import './Translation.css'
@@ -44,6 +43,8 @@
              console.log('value stored setImageSequence : ',imageSequence)
          }
  
+ 
+ 
          
  
      return (
@@ -74,4 +75,4 @@
      );
  }
  
- export default TranslationPage;
+ export default withAuth(TranslationPage);
