@@ -47,6 +47,18 @@ export const apiPostRequest = async (name) => {
             })
         })
     }
+
+    export const apiGetRequest = async (name) => {
+   
+        const response = await fetch(apiUrl, {
+            method: 'POST',
+            headers: createHeaders(),
+            body: JSON.stringify({
+                translations:{name}
+            })
+        })
+    }
+   
    
 
 

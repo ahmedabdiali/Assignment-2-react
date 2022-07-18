@@ -44,8 +44,6 @@
              console.log('value stored setImageSequence : ',imageSequence)
          }
  
- 
- 
          
  
      return (
