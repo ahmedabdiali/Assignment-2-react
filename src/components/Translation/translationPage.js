@@ -3,7 +3,7 @@
  * button to clear the translation(delete from the API)
  * logout button should clear all the storage(redirect to Login page)
  */
- import React,{useState,useEffect} from 'react';
+ import React,{useState} from 'react';
  
 
  import './Translation.css'
